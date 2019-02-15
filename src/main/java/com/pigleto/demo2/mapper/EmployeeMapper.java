@@ -4,11 +4,11 @@ package com.pigleto.demo2.mapper;
 import com.pigleto.demo2.entity.Employee;
 import org.apache.ibatis.annotations.*;
 
-@Mapper
+//@Mapper
 public interface EmployeeMapper {
 
     @Select("select * from Employee where id=#{id}")
-    public Employee selectEmployee(@Param("id") int id);
+    public Employee selectEmployee( int id);
 
 //    @Options(useGeneratedKeys = true,keyProperty = "id")
     @Insert("insert into Employee(lastName,email,gender,d_id) values(#{lastName},#{email},#{gender},#{d_id})")

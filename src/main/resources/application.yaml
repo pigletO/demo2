@@ -4,7 +4,7 @@ spring:
     username: root
     password: 123
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ssm_crud
+    url: jdbc:mysql://localhost:3306/ssm_crud?useUnicode=true&characterEncoding=utf8
     type: com.alibaba.druid.pool.DruidDataSource
     #   数据源其他配置
     initialSize: 5
@@ -30,3 +30,6 @@ spring:
     schema: ["classpath:/sql/department.sql","classpath:/sql/employee.sql"]
 server:
   port: 8081
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mapper/*.xml

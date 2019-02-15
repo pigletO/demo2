@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pigleto.demo2.mapper.DepartmentMapper">
+    <resultMap id="department" type="com.pigleto.demo2.entity.Department">
+        <id property="id" column="id"></id>
+        <result property="departmentName" column="departmentName"></result>
+    </resultMap>
+    <delete id="deleteDepartment" parameterType="Integer">
+        delete from Department where id=#{id};
+    </delete>
+    <select id="selectDepartmentAll" parameterType="Integer" resultMap="department">
+        select * from Department where id = #{id};
+    </select>
+</mapper>
